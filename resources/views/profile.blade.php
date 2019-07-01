@@ -18,25 +18,19 @@
 
       <form class="form-horizontal" role="form">
         <div class="form-group">
-          <label class="col-lg-3 control-label">First name:</label>
+          <label class="col-lg-3 control-label">Name : </label>
           <div class="col-lg-8">
-            <input class="form-control" value="Estela" type="text">
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="col-lg-3 control-label">Last name:</label>
-          <div class="col-lg-8">
-            <input class="form-control" value="Silva" type="text">
-          </div>
-        </div>
-        
-        <div class="form-group">
-          <label class="col-lg-3 control-label">Email:</label>
-          <div class="col-lg-8">
-            <input class="form-control" value="carmenestelasi@gmail.com" type="text">
+            <input class="form-control" value="{{ Auth::user()->name }}" type="text">
           </div>
         </div>
 
+        <div class="form-group">
+          <label class="col-lg-3 control-label">Email :</label>
+          <div class="col-lg-8">
+            <input class="form-control" value="{{ Auth::user()->email }}" type="text">
+          </div>
+        </div>
+        <br><br>
         <div class="form-group">
 
             <a href="{{route('home')}}" class="btn btn-success">back to home</a>
