@@ -10,6 +10,12 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::prefix('login')->group(function () {
+    Route::get('/{provider}', 'Auth\LoginController@redirectToProvider')->name('login.provider');
+    Route::get('/{provider}/callback', 'Auth\LoginController@handleProviderCallback')->name('login.provider.callback');
+});
+
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/register', 'HomeController@register')->name('register');
 Route::get('/profile', 'HomeController@profile')->name('profile');
