@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/admin', function () {
-    return view('bof.bof');
-});
+Route::get('/admin', 'BofController@index')->name('bof');
 
 Route::prefix('login')->group(function () {
     Route::get('/{provider}', 'Auth\LoginController@redirectToProvider')->name('login.provider');
